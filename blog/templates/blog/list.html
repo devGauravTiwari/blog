@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1 class="blog-heading">All Available Posts</h1>
+{% for post in posts %}
+<a href="{% url 'post' post.pk %}"><div class="section">
+	<h2>{{post.title}}</h1>
+	<p>{{post.body|truncatechars:50}}</p>
+</div></a>
+{% endfor %}
+{% endblock %}
